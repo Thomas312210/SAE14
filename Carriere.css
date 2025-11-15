@@ -1,0 +1,108 @@
+/* ----- IMAGE DE FOND ----- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("photo/celebration de titre avec le public.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+/* ----- HEADER ----- */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+}
+
+header h1 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+.home-link:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ----- CONTENEUR ----- */
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+/* ----- GRAND BLOC CARRIERE ----- */
+.career-block {
+  background: rgba(20,20,20,0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Sections internes */
+.career-section {
+  margin-bottom: 2rem;
+}
+
+.career-section h2 {
+  color: #ffd700;
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid images */
+.images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.images-grid img {
+  max-width: 280px;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.images-grid img:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* Texte semi-transparent */
+.text-placeholder {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  color: #f0f0f0;
+  line-height: 1.5;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: rgba(0,0,0,0.5);
+  color: #ddd;
+  font-size: 0.85rem;
+}

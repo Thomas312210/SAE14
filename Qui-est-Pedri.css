@@ -1,0 +1,110 @@
+/* ----- IMAGE DE FOND ----- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: url("photo/Canaries.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #333;
+}
+
+/* ----- HEADER ----- */
+header {
+  background-color: rgba(173, 176, 179, 0.4);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  backdrop-filter: blur(3px);
+}
+
+/* ----- Lien Accueil ----- */
+.home-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.home-link:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ----- CONTENU ----- */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.part {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.part h2 {
+  margin-top: 0;
+  color: #00529b;
+}
+
+/* ----- IMAGE Placeholder ----- */
+.image-placeholder {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  margin-bottom: 1rem;
+
+  display: flex;                /* Alignement horizontal */
+  justify-content: center;
+  gap: 1rem;                    /* Espace entre les images */
+  flex-wrap: wrap;              /* Passe à la ligne si nécessaire */
+  border: 2px dashed #888;
+}
+
+/* ----- STYLING DES IMAGES ----- */
+.image-placeholder img {
+  max-width: 260px;             /* Taille contrôlée */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+/* ----- Animation Zoom au survol ----- */
+.image-placeholder img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ----- Texte Placeholder ----- */
+.text-placeholder {
+  background: #e9f2ff;
+  border-left: 4px solid #00529b;
+  padding: 1rem;
+  border-radius: 4px;
+  font-style: italic;
+  color: #444;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #eee;
+  font-size: 0.85rem;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
