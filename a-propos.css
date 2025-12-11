@@ -3,17 +3,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  /* ---------- IMAGE DE FOND NÉTTE ---------- */
-  body {
+}
+
+/* ---------- IMAGE DE FOND NÉTTE ---------- */
+body {
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
     position: relative;
     overflow-x: hidden;
-  }
-  
-  body::before {
+}
+
+body::before {
     content: "";
     position: fixed;
     inset: 0;
@@ -24,37 +24,37 @@
     opacity: 1;       /* image nette */
     filter: none;
     z-index: -1;
-  }
-  
-  /* ---------- HEADER ---------- */
-  .main-header {
+}
+
+/* ---------- HEADER ---------- */
+.main-header {
     background: rgba(255, 255, 255, 0.55); /* un peu moins transparent pour meilleure lisibilité */
     padding: 1.5rem 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.3);
-  }
-  
-  .header-flex {
+}
+
+.header-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.7rem;
-  }
-  
-  .header-flex h1 {
+}
+
+.header-flex h1 {
     font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
     color: #111; /* texte plus lisible */
-  }
-  
-  .info {
+}
+
+.info {
     text-align: center;
     margin-top: 0.5rem;
     font-size: 0.95rem;
     color: #222;
-  }
-  
-  .home-btn {
+}
+
+.home-btn {
     background: #00529b;
     color: white;
     padding: 0.6rem 1.4rem;
@@ -62,106 +62,126 @@
     text-decoration: none;
     font-size: 1rem;
     transition: 0.2s ease;
-  }
-  
-  .home-btn:hover {
+}
+
+.home-btn:hover {
     background: #003f75;
-  }
-  
-  /* ---------- CONTENEUR ---------- */
-  .container {
+}
+
+/* ---------- CONTENEUR ---------- */
+.container {
     max-width: 900px;
     width: 90%;
     margin: 3rem auto;
     display: flex;
     flex-direction: column;
     gap: 3rem;
-  }
-  
-  /* ---------- SECTIONS ---------- */
-  .section {
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
     background: rgba(255,255,255,0.5); /* un peu plus opaque pour meilleure lisibilité */
     border-radius: 15px;
     border: 1px solid rgba(255,255,255,0.3);
     padding: 2rem;
     text-align: center;
     box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-  
+
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  
-  .section.visible {
+}
+
+.section.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  .section h2 {
+}
+
+.section h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #00529b;
-  }
-  
-  .section-flex {
+}
+
+.section-flex {
     display: flex;
     flex-direction: column;
     gap: 1.7rem;
-  }
-  
-  /* ---------- IMAGES ---------- */
-  .img-box {
+}
+
+/* ---------- IMAGES ---------- */
+.img-box {
     display: flex;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-  }
-  
-  .img-box img {
-    width: 48%;
+}
+
+.img-box img {
+    width: 48%; /* Par défaut (ordi) : 2 images par ligne */
     border-radius: 12px;
     object-fit: cover;
     border: 1px solid rgba(255,255,255,0.6);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  
-  .img-box img:hover {
+}
+
+.img-box img:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  }
-  
-  /* ---------- TEXTE ---------- */
-  .text-box {
+}
+
+/* ---------- TEXTE ---------- */
+.text-box {
     background: rgba(255,255,255,0.55); /* légèrement plus opaque pour lire facilement */
     padding: 1.4rem;
     border-left: 4px solid rgba(0,82,155,0.45);
     border-radius: 6px;
     text-align: center;
     color: #222; /* texte plus foncé */
-  }
-  
-  /* ---------- FOOTER ---------- */
-  footer {
+}
+
+/* ---------- FOOTER ---------- */
+footer {
     text-align: center;
     padding: 1.5rem 0;
     color: #eee;
     background: rgba(0, 0, 0, 0.55); /* un peu plus opaque */
     margin-top: 3rem;
     font-size: 0.9rem;
-  }
-  
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 600px) {
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN (Tablettes et Mobiles)
+   ======================================================= */
+
+/* Sécurité : empêche les images de dépasser */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* On passe à 768px pour inclure les Tablettes (iPad) et Mobiles */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Les images passent l'une sous l'autre (100% largeur) */
     .img-box img {
-      width: 100%;
+        width: 100%;
+        margin-bottom: 15px; /* Petit espace entre les images */
     }
-  
+
+    /* 2. On réduit la taille du titre principal */
     .header-flex h1 {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
-  
+
+    /* 3. On réduit les marges intérieures pour gagner de la place */
     .section {
-      padding: 1.5rem;
+        padding: 1.5rem 1rem;
     }
-  }
-  
+
+    /* 4. Le conteneur prend presque toute la largeur */
+    .container {
+        width: 95%;
+        margin: 2rem auto;
+    }
+}

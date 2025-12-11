@@ -108,3 +108,42 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(2px);
 }
+/* =======================================================
+   RESPONSIVE DESIGN (Tablettes et Mobiles)
+   ======================================================= */
+
+/* Sécurité globale */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. On optimise l'espace sur petit écran */
+    .container {
+        width: 95%; /* Plus large */
+        margin: 1rem auto; /* Moins de marge verticale */
+    }
+
+    .part {
+        padding: 1rem; /* Moins d'espace intérieur */
+    }
+
+    /* 2. Les images : on les empile et on les agrandit */
+    .image-placeholder {
+        flex-direction: column; /* L'une sous l'autre */
+        padding: 0.5rem;
+    }
+
+    .image-placeholder img {
+        max-width: 100%; /* IMPORTANT : On fait sauter la limite de 260px */
+        width: 100%;     /* Elles prennent tout l'écran */
+        margin-bottom: 10px;
+    }
+
+    /* 3. Ajustement du titre du header */
+    header {
+        padding: 1rem 0;
+    }
+}

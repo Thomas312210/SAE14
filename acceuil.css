@@ -83,23 +83,39 @@ h2 {
 .image-gallery img {
     flex: 1;
     max-width: 32%; /* 3 images par ligne */
+    height: auto; /* garde le ratio */
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    object-fit: cover;
 }
 
 .image-gallery img:hover {
+    /* zoom */
     transform: scale(1.05);
 }
 .photo-palmares {
-    display: block;
-    max-width: 250px;
-    margin: 20px auto;
-    border-radius: 10%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
 }
 
+.photo-palmares img {
+    flex: 1;
+    max-width: 32%; /* 3 images par ligne */
+    height: auto; /* garde le ratio */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, filter 0.4s ease;
+    object-fit: cover;
+}
+
+.photo-palmares img:hover {
+    /* zoom */
+    transform: scale(1.05);
+}
 .bio-photo:hover {
     animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -137,62 +153,69 @@ body::before {
     opacity: 0.6;
 }
 
+/* =======================================================
+   RESPONSIVE DESIGN (Tablettes et Mobiles)
+   ======================================================= */
 
-
-
-
-
-body {
-    margin-top: 230px; /* déplace tout le contenu sous le header */
-}
-/* ----- Flip card container ----- */
-.flip-card {
-    background-color: transparent;
-    width: 100%;
-    max-width: 32%;
-    perspective: 1000px; /* perspective pour effet 3D */
+/* Sécurité : empêche TOUTES les images de dépasser de l'écran */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* ----- Flip card inner ----- */
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    padding-top: 75%; /* ratio pour la carte */
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-}
+/* Dès que l'écran fait moins de 768px (Tablette et téléphone) */
+@media screen and (max-width: 768px) {
 
-/* ----- Flip on click ----- */
-.flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-}
+    /* 1. On remet le header en position normale pour qu'il ne cache pas le contenu */
+    header {
+        position: relative; /* Il ne flotte plus par-dessus */
+        height: auto;
+        padding: 20px 0;
+    }
 
-/* ----- Front and back faces ----- */
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-}
+    /* 2. On annule l'énorme marge du body car le header n'est plus "fixed" */
+    body {
+        margin-top: 0 !important; /* Important pour écraser ton 230px */
+    }
 
-/* Image front ----- */
-.flip-card-front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
+    /* 3. Le contenu principal prend plus de place */
+    main {
+        width: 95%; /* On utilise presque toute la largeur */
+        margin-top: 20px; /* Juste un petit espace sous le header */
+        padding: 15px;
+    }
 
-/* Back face ----- */
-.flip-card-back {
-    background-color: #2b2d42;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    transform: rotateY(180deg);
+    /* 4. Le Menu : on met les liens les uns sous les autres */
+    header nav {
+        display: flex;
+        flex-direction: column; /* Vertical */
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    header nav a {
+        display: block;
+        margin: 10px 0; /* Espace entre les boutons */
+        padding: 10px;
+        width: 100%; /* Zone de clic plus large */
+        border-bottom: 1px solid rgba(255,255,255,0.2); /* Petit trait de séparation */
+    }
+
+    /* 5. Les galeries d'images : 1 image par ligne au lieu de 3 */
+    .image-gallery, .photo-palmares {
+        flex-direction: column; /* Colonne */
+    }
+
+    .image-gallery img, 
+    .photo-palmares img,
+    .flip-card {
+        max-width: 100%; /* Prend toute la largeur */
+        width: 100%;
+        margin-bottom: 20px; /* Espace entre chaque image */
+    }
+
+    /* 6. On réduit un peu la taille du titre */
+    header h1 {
+        font-size: 28px;
+    }
 }
