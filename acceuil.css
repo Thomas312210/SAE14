@@ -1,4 +1,3 @@
-/* ----- Styles généraux ----- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
@@ -8,11 +7,10 @@ body {
     line-height: 1.6;
 }
 
-/* ----- En-tête ----- */
 header {
-    background-color: rgba(43, 45, 66, 0.3); /* très transparent */
+    background-color: rgba(43, 45, 66, 0.3);
     color: rgba(248, 248, 248, 0.9);
-    padding: 30px 0;
+    padding: 15px 0;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -20,18 +18,16 @@ header {
     left: 0;
     z-index: 10;
     transition: opacity 0.3s ease;
-    margin-top: auto;
 }
 
 header h1, header p, header nav a {
     opacity: 0.9;
 }
 
-/* ----- Contenu principal ----- */
 main {
     width: 80%;
     max-width: 1000px;
-    margin: 140px auto 40px auto; /* laisser espace pour header fixe */
+    margin: 140px auto 40px auto;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 30px;
     border-radius: 10px;
@@ -40,19 +36,17 @@ main {
     z-index: 1;
 }
 
-/* ----- Sections avec espace entre elles ----- */
 section {
     margin-bottom: 60px;
 }
 
-/* Titres */
+
 h2 {
     color: #2b2d42;
     border-bottom: 2px solid #8d99ae;
     padding-bottom: 5px;
 }
 
-/* ----- Photo de profil ----- */
 .bio-photo {
     display: block;
     max-width: 250px;
@@ -63,7 +57,7 @@ h2 {
 }
 
 .bio-photo:hover {
-    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes slide-bottom {
@@ -71,7 +65,6 @@ h2 {
     100% { transform: translateY(0); opacity: 1; }
 }
 
-/* ----- Galerie d'images ----- */
 .image-gallery {
     display: flex;
     justify-content: space-between;
@@ -82,8 +75,8 @@ h2 {
 
 .image-gallery img {
     flex: 1;
-    max-width: 32%; /* 3 images par ligne */
-    height: auto; /* garde le ratio */
+    max-width: 32%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     transition: transform 0.4s ease, filter 0.4s ease;
@@ -91,7 +84,6 @@ h2 {
 }
 
 .image-gallery img:hover {
-    /* zoom */
     transform: scale(1.05);
 }
 .photo-palmares {
@@ -104,8 +96,8 @@ h2 {
 
 .photo-palmares img {
     flex: 1;
-    max-width: 32%; /* 3 images par ligne */
-    height: auto; /* garde le ratio */
+    max-width: 32%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     transition: transform 0.4s ease, filter 0.4s ease;
@@ -113,13 +105,12 @@ h2 {
 }
 
 .photo-palmares img:hover {
-    /* zoom */
     transform: scale(1.05);
 }
 .bio-photo:hover {
     animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-/* ----- Liens ----- */
+
 a {
     color: #ef233c;
     text-decoration: none;
@@ -130,7 +121,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ----- Pied de page ----- */
 footer {
     text-align: center;
     padding: 20px;
@@ -138,7 +128,6 @@ footer {
     color: white;
 }
 
-/* ----- Fond stade derrière le contenu principal ----- */
 body::before {
     content: "";
     background-image: url('photo/campnou .webp');
@@ -153,68 +142,52 @@ body::before {
     opacity: 0.6;
 }
 
-/* =======================================================
-   RESPONSIVE DESIGN (Tablettes et Mobiles)
-   ======================================================= */
-
-/* Sécurité : empêche TOUTES les images de dépasser de l'écran */
 img {
     max-width: 100%;
     height: auto;
 }
-
-/* Dès que l'écran fait moins de 768px (Tablette et téléphone) */
 @media screen and (max-width: 768px) {
 
-    /* 1. On remet le header en position normale pour qu'il ne cache pas le contenu */
     header {
-        position: relative; /* Il ne flotte plus par-dessus */
+        position: relative;
         height: auto;
         padding: 20px 0;
     }
 
-    /* 2. On annule l'énorme marge du body car le header n'est plus "fixed" */
     body {
-        margin-top: 0 !important; /* Important pour écraser ton 230px */
+        margin-top: 0 !important; 
     }
-
-    /* 3. Le contenu principal prend plus de place */
     main {
-        width: 95%; /* On utilise presque toute la largeur */
-        margin-top: 20px; /* Juste un petit espace sous le header */
+        width: 95%;
+        margin-top: 20px;
         padding: 15px;
     }
-
-    /* 4. Le Menu : on met les liens les uns sous les autres */
     header nav {
         display: flex;
-        flex-direction: column; /* Vertical */
+        flex-direction: column;
         align-items: center;
         margin-top: 15px;
     }
 
     header nav a {
         display: block;
-        margin: 10px 0; /* Espace entre les boutons */
+        margin: 10px 0;
         padding: 10px;
-        width: 100%; /* Zone de clic plus large */
-        border-bottom: 1px solid rgba(255,255,255,0.2); /* Petit trait de séparation */
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
     }
-
-    /* 5. Les galeries d'images : 1 image par ligne au lieu de 3 */
     .image-gallery, .photo-palmares {
-        flex-direction: column; /* Colonne */
+        flex-direction: column;
     }
 
     .image-gallery img, 
     .photo-palmares img,
     .flip-card {
-        max-width: 100%; /* Prend toute la largeur */
+        max-width: 100%;
         width: 100%;
-        margin-bottom: 20px; /* Espace entre chaque image */
+        margin-bottom: 20px;
     }
 
-    /* 6. On réduit un peu la taille du titre */
     header h1 {
         font-size: 28px;
     }

@@ -106,26 +106,17 @@ footer {
   color: #ddd;
   font-size: 0.85rem;
 }
-/* =======================================================
-   RESPONSIVE DESIGN (Tablettes et Mobiles)
-   A coller à la fin du fichier
-   ======================================================= */
-
-/* Sécurité pour que les images ne dépassent jamais */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Version Mobile et Tablette */
 @media screen and (max-width: 768px) {
     
-    /* 1. On réduit les marges du grand bloc noir */
     .career-block {
         padding: 1rem; 
     }
 
-    /* 2. Titres un peu plus petits */
     header h1 {
         font-size: 1.6rem;
     }
@@ -134,7 +125,6 @@ img {
         font-size: 1.4rem;
     }
 
-    /* 3. Les images passent en pleine largeur l'une sous l'autre */
     .images-grid {
         flex-direction: column; 
     }

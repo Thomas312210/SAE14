@@ -1,11 +1,10 @@
-/* ---------- RESET ---------- */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ---------- IMAGE DE FOND NÉTTE ---------- */
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
@@ -21,14 +20,13 @@ body::before {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    opacity: 1;       /* image nette */
+    opacity: 1;
     filter: none;
     z-index: -1;
 }
 
-/* ---------- HEADER ---------- */
 .main-header {
-    background: rgba(255, 255, 255, 0.55); /* un peu moins transparent pour meilleure lisibilité */
+    background: rgba(255, 255, 255, 0.55);
     padding: 1.5rem 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
@@ -44,7 +42,7 @@ body::before {
     font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
-    color: #111; /* texte plus lisible */
+    color: #111;
 }
 
 .info {
@@ -55,7 +53,7 @@ body::before {
 }
 
 .home-btn {
-    background: #00529b;
+    background: #ef233c;
     color: white;
     padding: 0.6rem 1.4rem;
     border-radius: 8px;
@@ -65,10 +63,9 @@ body::before {
 }
 
 .home-btn:hover {
-    background: #003f75;
+    background: #ef233c;
 }
 
-/* ---------- CONTENEUR ---------- */
 .container {
     max-width: 900px;
     width: 90%;
@@ -78,9 +75,8 @@ body::before {
     gap: 3rem;
 }
 
-/* ---------- SECTIONS ---------- */
 .section {
-    background: rgba(255,255,255,0.5); /* un peu plus opaque pour meilleure lisibilité */
+    background: rgba(255,255,255,0.5);
     border-radius: 15px;
     border: 1px solid rgba(255,255,255,0.3);
     padding: 2rem;
@@ -100,7 +96,7 @@ body::before {
 .section h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
-    color: #00529b;
+    color:   #5d6063;
 }
 
 .section-flex {
@@ -109,7 +105,6 @@ body::before {
     gap: 1.7rem;
 }
 
-/* ---------- IMAGES ---------- */
 .img-box {
     display: flex;
     justify-content: center;
@@ -118,7 +113,7 @@ body::before {
 }
 
 .img-box img {
-    width: 48%; /* Par défaut (ordi) : 2 images par ligne */
+    width: 48%;
     border-radius: 12px;
     object-fit: cover;
     border: 1px solid rgba(255,255,255,0.6);
@@ -130,56 +125,41 @@ body::before {
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* ---------- TEXTE ---------- */
 .text-box {
-    background: rgba(255,255,255,0.55); /* légèrement plus opaque pour lire facilement */
+    background: rgba(255,255,255,0.55);
     padding: 1.4rem;
     border-left: 4px solid rgba(0,82,155,0.45);
     border-radius: 6px;
     text-align: center;
-    color: #222; /* texte plus foncé */
+    color: #222;
 }
 
-/* ---------- FOOTER ---------- */
 footer {
     text-align: center;
     padding: 1.5rem 0;
     color: #eee;
-    background: rgba(0, 0, 0, 0.55); /* un peu plus opaque */
+    background: rgba(0, 0, 0, 0.55);
     margin-top: 3rem;
     font-size: 0.9rem;
 }
-
-/* =======================================================
-   RESPONSIVE DESIGN (Tablettes et Mobiles)
-   ======================================================= */
-
-/* Sécurité : empêche les images de dépasser */
 img {
     max-width: 100%;
     height: auto;
 }
-
-/* On passe à 768px pour inclure les Tablettes (iPad) et Mobiles */
 @media screen and (max-width: 768px) {
     
-    /* 1. Les images passent l'une sous l'autre (100% largeur) */
     .img-box img {
         width: 100%;
-        margin-bottom: 15px; /* Petit espace entre les images */
+        margin-bottom: 15px;
     }
 
-    /* 2. On réduit la taille du titre principal */
     .header-flex h1 {
         font-size: 1.8rem;
     }
 
-    /* 3. On réduit les marges intérieures pour gagner de la place */
     .section {
         padding: 1.5rem 1rem;
     }
-
-    /* 4. Le conteneur prend presque toute la largeur */
     .container {
         width: 95%;
         margin: 2rem auto;
