@@ -5,7 +5,7 @@ Bonjour. Voici le dépôt de mon projet de développement web (R1.15). J'ai choi
 ## Voir le site en ligne
 
 Le site est accessible directement sur GitHub Pages en cliquant ici :
-(https://github.com/Thomas312210/SAE14)
+([https://github.com/Thomas312210/SAE14](https://thomas312210.github.io/SAE14/))
 
 ## De quoi parle le site ?
 
