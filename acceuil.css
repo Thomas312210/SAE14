@@ -31,7 +31,7 @@ header {
     background-color: rgba(30, 40, 60, 0.1); 
     backdrop-filter: blur(4px);
     
-    color: #f8f8f8;
+    color: #333;
     padding: 20px 0;
     
     display: flex;
